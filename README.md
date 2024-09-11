@@ -1,5 +1,9 @@
 # Image-classification-with-CNNs
 
+You will train and evaluate three different categories of networks on the `Imagenette` dataset. For each model, it is recommended that you implement them using [PyTorch Lightning](http://www.pytorchlightning.ai).
+
+For all tasks, free CPU compute time and possible GPU time is available through [Google Colab](https://colab.research.google.com/).
+
 # A Basic CNN
 
 The first network will be a basic CNN. This network should include some number of convolutional layers followed by fully connected layers. There is no size requirement for this network nor is there a performance requirement. Train the model until convergence. Implement some form of early stopping in case the model begins to overfit.
