@@ -1,33 +1,70 @@
-# Image-classification-with-CNNs
+# VisionNet-X: CNN Architectures & Transfer Learning Performance Comparison
 
-You will train and evaluate three different categories of networks on the `Imagenette` dataset. For each model, it is recommended that you implement them using [PyTorch Lightning](http://www.pytorchlightning.ai).
+This project evaluates four different Convolutional Neural Network (CNN) architectures to understand how model depth, regularization, and transfer learning affect image classification accuracy on the Imagenette dataset.
 
-For all tasks, free CPU compute time and possible GPU time is available through [Google Colab](https://colab.research.google.com/).
+## 📌 Models Compared
+1. **Basic CNN**
+2. **All-CNN Architecture**
+3. **Regularized CNN**
+4. **Transfer Learning Model (Pretrained Network)**
 
-# A Basic CNN
+---
 
-The first network will be a basic CNN. This network should include some number of convolutional layers followed by fully connected layers. There is no size requirement for this network nor is there a performance requirement. Train the model until convergence. Implement some form of early stopping in case the model begins to overfit.
+## 🚀 Objective
+The goal is to compare traditional CNN models with more advanced techniques such as regularization and transfer learning to determine which architecture provides the highest accuracy and most stable training behavior.
 
-In your report, describe the chosen architecture and include the training loss, validation loss, and final test accuracy of the model.
+---
 
-# All Convolutional Net
+## 📊 Results Summary
 
-Create an all convolutional model and train it on the `Imagenette` dataset. Compare the number of total parameters in this model versus the basic CNN used in the previous section. Train the model until convergence. Use early stopping to prevent the network from overfitting (if applicable).
+| Model | Test Accuracy | Notes |
+|-------|--------------|-------|
+| Basic CNN | 70.52% | Baseline, slight overfitting |
+| All-CNN Model | 70.70% | Early stopping triggered |
+| Regularized CNN | 70.97% | More stable, less overfitting |
+| **Transfer Learning** | **80.87%** | Best performance, strong generalization |
 
-For more information on all convolutional networks, refer to the [original paper](https://arxiv.org/abs/1412.6806).
+---
 
-In your report, describe the chosen architecture and report the training loss, validation loss, and final test accuracy of the model.
+## 🧠 Key Insights
+- Transfer learning significantly improves performance by leveraging pretrained features.
+- Regularization techniques help stabilize training and reduce overfitting.
+- All simple CNN models plateau around ~70% accuracy.
+- Transfer learning achieves **10% higher accuracy**, showing the power of pretrained deep networks.
 
-# Regularization
+---
 
-Pick one of the models used in the previous two sections and add regularization in the form of data augmentation or dropout. Train the model until convergence.
+## 🛠️ Technologies Used
+- Python  
+- PyTorch  
+- Convolutional Neural Networks  
+- Regularization (Dropout, etc.)  
+- Transfer Learning (fine-tuning pretrained models)
 
-In your report, describe your choice of data augmentation and provide a clear comparison of the model with and without regularization.
+---
 
-# Transfer Learning
+## 📈 Training Logs (Highlights)
+### Basic CNN
+- Test Accuracy: 70.52%
+- Validation loss fluctuates → overfitting likely
 
-Transfer learning is an effective way to leverage features learned from another task into a new task. For this part, use a model that was trained on the `Imagenette` dataset and fine-tune it using the CIFAR10 dataset. You can refer to the class demonstration of [transfer learning](https://github.com/ajdillhoff/CSE6363/blob/main/deep_learning/transfer_learning.ipynb) to help get started.
+### All-CNN
+- Early stopping after 5 epochs
+- Test Accuracy: 70.70%
 
-Using a model from a previous run, re-train it from scratch on the CIFAR10 dataset. Take the same model and initialize it with pre-trained weights from the Imagenette dataset. With the pre-trained model, fine-tune it on the CIFAR10 dataset.
+### Regularized CNN
+- More stable validation performance
+- Test Accuracy: 70.97%
 
-In your report, describe the pre-trained model you chose to use and include the fine-tuning training plots along with the final model accuracy.
+### Transfer Learning
+- Best model: Test Accuracy **80.87%**
+- Consistent drop in training & validation loss
+
+---
+
+## 🏆 Best Model
+### ✔ **Transfer Learning Model**
+Achieved the highest test accuracy (80.87%) and demonstrated strong generalization.
+
+These weights are recommended for deployment or further experimentation.
+
